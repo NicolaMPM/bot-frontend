@@ -1,0 +1,62 @@
+{
+  "name": "bot-front",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "package": "electron-builder build --win -c.extraMetadata.main=build/electron/main.js --publish never",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "build-electron": "mkdir build/electron && robocopy electron build/electron /S",
+    "electron-dev": "set ELECTRON_START_URL=http://localhost:3001 electron ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^29.1.4",
+    "electron-builder": "^24.13.3"
+  },
+  "main": "electron/main.js",
+  "productName": "Пример приложения Electron Create React",
+  "start": "set BROWSER=none && react-scripts start",
+  "homepage": "./",
+
+  "build": {
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "publish": {
+      "provider": "github",
+      "repo": "electron-cra-example",
+      "owner": "johndyer24"
+    }
+  }
+}
